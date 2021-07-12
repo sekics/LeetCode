@@ -43,4 +43,21 @@ class HIndex{
         // System.out.println(left + " " + right ) ;
         return rs ;
     }
+
+    public int hIndexInOrder(int[] citations){
+        int n = citations.length ;
+        int left = 0 , right = n - 1 , rs = 0 ;
+        int mid ;
+        while( left <= right ){
+            mid = ( left + right ) / 2 ;
+            if( citations[mid] >= n - mid){
+                rs = mid - 1 ;
+                right = mid - 1 ;
+            }
+            else{
+                left = mid + 1 ;
+            }
+        }
+        return n - rs ;
+    }
 }
