@@ -1,5 +1,7 @@
 package main.leetcode.buildtree;
 
+import org.junit.Test;
+
 public class AVL {
 
     public int getHight( TreeNode root ){
@@ -11,15 +13,17 @@ public class AVL {
 
     public TreeNode leftRotation(TreeNode root){
         TreeNode tmp = root.right.left ;
-        root.left.right = root ;
+        TreeNode newRoot = root.right ;
+        root.right.left = root ;
         root.right = tmp ;
-        return root ;
+        return newRoot ;
     }
     public TreeNode rightRotation(TreeNode root){
         TreeNode tmp = root.left.right ;
+        TreeNode newRoot = root.left ;
         root.left.right = root ;
         root.left = tmp ;
-        return root.left ;
+        return newRoot ;
     }
     public TreeNode leftRightRotation(TreeNode root){
         root.left = leftRotation(root.left) ;
@@ -72,5 +76,14 @@ public class AVL {
             root = buildAVL(root,nums[i]) ;
         }
         return root ;
+    }
+
+    @Test
+    public void TestVAL(){
+        TreeNode root = null ;
+        int[] nums = {-10,-3,0,5,9} ;
+        for( int i = 0 ; i < nums.length ; i ++ ){
+            root = buildAVL(root,nums[i]) ;
+        }
     }
 }
