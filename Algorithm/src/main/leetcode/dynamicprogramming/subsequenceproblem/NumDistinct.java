@@ -1,4 +1,4 @@
-package main.leetcode.dynamicprogramming;
+package main.leetcode.dynamicprogramming.subsequenceproblem;
 
 import java.util.Arrays;
 
