@@ -3,6 +3,7 @@ package main.leetcode.dynamicprogramming.statecompression;
 public class CountArrangement {
 
     public int countArrangement( int n ){
+
         int mask = 1 << n ;
         int[][] dp = new int[ n + 1 ][ mask ] ;
         dp[0][0] = 1 ;
