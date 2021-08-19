@@ -27,17 +27,6 @@ public class CountDigitOne {
             int p = n / base[1] ;
             ans = p == 1 ? n - base[1] + 1 : base[1] ;
             ans = ans + table[base[0]] * p + count( n % base[1],table) ;
-            // if( p == 1 ){
-            //     ans = table[base[0]]  +  count( n % base[1],table)  + n - base[1] + 1;
-            // }
-            // else if( p > 1 ){
-            //     System.out.println( n + "  " + p + " " + table[base[0] ] * 10 ) ;
-            //     // ans = ans + table[base[0] ] * 10 + 1 + ( p - 1 ) * count( n % base[1],table) ;
-            //     // ans = base[1] + table[base[0]] * 2 + ( p - 1 ) * count( n % base[1] , table ) ;
-            //     ans = base[1] + table[ base[0] ] * p + count( n % base[1], table ) ;
-            //     System.out.println(base[1] +table[base[0]] * 2 ) ;
-            //     System.out.println( table[ base[0]] + 1 ) ;
-            // }
             return ans ;
         }
     }
