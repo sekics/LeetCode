@@ -62,4 +62,10 @@ public class TestQuickPow {
         }
         System.out.println( sb.toString() );
     }
+
+    @Test
+    public void testSplit(){
+        String version = "1.1.1.1" ;
+        System.out.println( Arrays.toString(version.split("\\.")) ) ;
+    }
 }
